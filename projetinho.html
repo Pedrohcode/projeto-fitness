@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Fitness</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #4caf50;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border-radius: 15px;
+      padding: 20px;
+      width: 320px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .info {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+      line-height: 1.6;
+    }
+
+    .info.visible {
+      display: block;
+    }
+
+    .info h2 {
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      margin-bottom: 6px;
+    }
+
+    .info ul {
+      margin-top: 5px;
+      padding-left: 20px;
+    }
+
+    .info ul li {
+      margin-bottom: 5px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projeto Fitness</h1>
+  </header>
+
+  <section class="team">
+    <div class="card" onclick="toggleInfo('pedro')">
+      <img src="henrique.jpg" alt="Pedro Henrique">
+      <div id="pedro" class="info">
+        <h2>Pedro Henrique</h2>
+        <p><strong>Peso atual:</strong> 134kg</p>
+        <p><strong>Altura:</strong> 1,90m</p>
+        <p><strong>Objetivo longo prazo:</strong> Perder 20kg e ganhar massa</p>
+        <p><strong>Objetivo até 27/07:</strong> Perder 4kg</p>
+        <p><strong>Progresso:</strong> Maio: 136kg → Junho: 134kg</p>
+        <p><strong>Água diária ideal:</strong> 4690ml</p>
+        <p><strong>Desafio (25 dias):</strong></p>
+        <ul>
+          <li>Sem doce</li>
+          <li>Beber 4690ml de água</li>
+          <li>Sem refrigerante ou suco</li>
+          <li>Ir à academia 4x por semana</li>
+          <li>Comer pelo menos 1 fruta por dia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleInfo('raquel')">
+      <img src="raquel.jpg" alt="Raquel Pereira">
+      <div id="raquel" class="info">
+        <h2>Raquel Pereira</h2>
+        <p><strong>Peso atual:</strong> 111kg</p>
+        <p><strong>Altura:</strong> 1,72m</p>
+        <p><strong>Objetivo longo prazo:</strong> Perder 35kg e ganhar massa</p>
+        <p><strong>Objetivo até 27/07:</strong> Perder 5kg</p>
+        <p><strong>Progresso:</strong> Maio: 114kg → Junho: 111kg</p>
+        <p><strong>Água diária ideal:</strong> 3885ml</p>
+        <p><strong>Desafio (25 dias):</strong></p>
+        <ul>
+          <li>Sem doce</li>
+          <li>Sem qualquer tipo de besteira</li>
+          <li>Sem refrigerante</li>
+          <li>Beber 3885ml de água</li>
+          <li>Treinar pelo menos 4x por semana</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleInfo('vanessa')">
+      <img src="vanessa.jpg" alt="Vanessa Cordeiro">
+      <div id="vanessa" class="info">
+        <h2>Vanessa Cordeiro</h2>
+        <p><strong>Peso atual:</strong> 100kg</p>
+        <p><strong>Altura:</strong> 1,67m</p>
+        <p><strong>Objetivo longo prazo:</strong> Perder 10kg e ganhar massa</p>
+        <p><strong>Objetivo até 27/07:</strong> Perder 4kg</p>
+        <p><strong>Progresso:</strong> Maio: 98kg → Junho: 100kg</p>
+        <p><strong>Água diária ideal:</strong> 3500ml</p>
+        <p><strong>Desafio (25 dias):</strong></p>
+        <ul>
+          <li>Sem qualquer tipo de besteira</li>
+          <li>Beber 3500ml de água</li>
+          <li>Treinar pelo menos 4x por semana</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      info.classList.toggle('visible');
+    }
+  </script>
+</body>
+</html>
